@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.prizy.entities.StorePrice;
 import com.prizy.entities.repo.intf.IPriceStoreRepository;
-import com.prizy.services.intf.IPriceCollectionService;
+import com.prizy.services.intf.IPriceStoreService;
 
 @Service
-public class PriceCollectionService implements IPriceCollectionService {
+public class PriceStoreService implements IPriceStoreService {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -39,6 +39,21 @@ public class PriceCollectionService implements IPriceCollectionService {
 	@Override
 	public StorePrice getPriceStore(Long id) {
 		return repo.findOne(id);
+	}
+
+	@Override
+	public Long getLowestPrice(Long productId) {
+		return repo.findLowestPrice(productId);
+	}
+
+	@Override
+	public Long getHighestPrice(Long productId) {
+		return repo.findHighestPrice(productId);
+	}
+
+	@Override
+	public Long getAveragePrice(Long productId) {
+		return repo.findAveragePrice(productId);
 	}
 
 }

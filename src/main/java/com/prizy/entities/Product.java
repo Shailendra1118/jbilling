@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Product")
+@Table(name = "PRODUCT")
 @SequenceGenerator(name = "prod_seq", initialValue = 500)
 public class Product implements Serializable {
 

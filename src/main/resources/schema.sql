@@ -19,7 +19,13 @@ currency varchar2(50),
 created_at timestamp,
 updated_at timestamp);
 
-
 CREATE INDEX prod_idx ON STORE_PRICE(product_id);
 CREATE INDEX stor_idx ON STORE_PRICE(store_id);
 
+
+create table PRICE_INFO(id number(10) primary key, 
+product_id number(10),
+ideal_price number(10),  
+currency varchar2(50),
+created_at timestamp,
+updated_at timestamp);

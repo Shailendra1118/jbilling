@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.prizy.entities.StorePrice;
-import com.prizy.services.intf.IPriceCollectionService;
+import com.prizy.services.intf.IPriceStoreService;
 
 @RestController
-public class PriceCollectController {
+public class PriceStoreController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private IPriceCollectionService service;
+	private IPriceStoreService service;
 
 	@RequestMapping(value = "/storeprice/{id}", method = RequestMethod.GET)
 	public ResponseEntity<StorePrice> getStorePrice(@PathVariable("id") long id) {

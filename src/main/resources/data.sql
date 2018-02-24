@@ -25,3 +25,6 @@ VALUES(4L, 3, 3, 10000);
 INSERT INTO "STORE_PRICE" (id, product_id, store_id, store_price) 
 VALUES(5L, 2, 1, 47000);
 
+--PRICE_INFO table
+INSERT INTO "PRICE_INFO" (id, product_id, ideal_price, currency) 
+VALUES(1L, 1, 5000, 'INR');
