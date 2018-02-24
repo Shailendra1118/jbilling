@@ -14,14 +14,14 @@ INSERT INTO "STORE" (id, store_name, description, location) VALUES(3L, 'Mobilewa
 
 
 --PRICE_STORE table
-INSERT INTO "PRICE_STORE" (id, product_id, store_id, store_price) 
+INSERT INTO "STORE_PRICE" (id, product_id, store_id, store_price) 
 VALUES(1L, 1, 2, 8500);
-INSERT INTO "PRICE_STORE" (id, product_id, store_id, store_price) 
+INSERT INTO "STORE_PRICE" (id, product_id, store_id, store_price) 
 VALUES(2L, 1, 3, 9000);
-INSERT INTO "PRICE_STORE" (id, product_id, store_id, store_price) 
+INSERT INTO "STORE_PRICE" (id, product_id, store_id, store_price) 
 VALUES(3L, 3, 2, 9000);
-INSERT INTO "PRICE_STORE" (id, product_id, store_id, store_price) 
+INSERT INTO "STORE_PRICE" (id, product_id, store_id, store_price) 
 VALUES(4L, 3, 3, 10000);
-INSERT INTO "PRICE_STORE" (id, product_id, store_id, store_price) 
+INSERT INTO "STORE_PRICE" (id, product_id, store_id, store_price) 
 VALUES(5L, 2, 1, 47000);
 
