@@ -7,4 +7,6 @@ import com.prizy.entities.PriceInfo;
 public interface IPriceInfoService {
 
 	List<PriceInfo> getPriceInfo(Long productId);
+
+	void updateIdeaPrice(Long idealPrice, Long productId);
 }

@@ -18,5 +18,9 @@ public interface IPriceStoreService {
 
 	Long getAveragePrice(Long productId);
 
+	Long getTotalPriceEntries(Long productId);
+
 	void create(StorePrice priceStore);
+
+	List<StorePrice> getProductPrices(Long productId);
 }

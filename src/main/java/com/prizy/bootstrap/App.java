@@ -18,11 +18,13 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.prizy")
 @EnableJpaRepositories("com.prizy.entities.repo.intf")
 @EnableJpaAuditing
+@EnableScheduling
 public class App {
 
 	@Bean

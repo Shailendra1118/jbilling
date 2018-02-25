@@ -32,6 +32,12 @@ public class PriceStoreService implements IPriceStoreService {
 	}
 
 	@Override
+	public List<StorePrice> getProductPrices(Long productId) {
+		logger.info("getProductPrices..");
+		return repo.findByProductId(productId);
+	}
+
+	@Override
 	public void create(StorePrice priceStore) {
 		repo.save(priceStore);
 	}
@@ -54,6 +60,11 @@ public class PriceStoreService implements IPriceStoreService {
 	@Override
 	public Long getAveragePrice(Long productId) {
 		return repo.findAveragePrice(productId);
+	}
+
+	@Override
+	public Long getTotalPriceEntries(Long productId) {
+		return repo.findTotalPriceEntries(productId);
 	}
 
 }

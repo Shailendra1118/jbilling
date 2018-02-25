@@ -20,4 +20,9 @@ public class PriceInfoService implements IPriceInfoService {
 		return repo.findByProductId(productId);
 	}
 
+	@Override
+	public void updateIdeaPrice(Long idealPrice, Long productId) {
+		repo.updateIdealPrice(idealPrice, productId);
+	}
+
 }

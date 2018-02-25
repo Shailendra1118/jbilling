@@ -41,6 +41,8 @@ public class PriceDetailsService implements IPriceDetailsService {
 		details.setLowestPrice(priceStoreService.getLowestPrice(pid));
 		details.setHighestPrice(priceStoreService.getHighestPrice(pid));
 		details.setAveragePrice(priceStoreService.getAveragePrice(pid));
+		details.setCountOfDiffPrices(priceStoreService
+				.getTotalPriceEntries(pid));
 		details.setIdealPrice(idealPrice.iterator().next().getIdealPrice());
 
 		return details;

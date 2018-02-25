@@ -20,4 +20,9 @@ public interface IPriceStoreRepository extends JpaRepository<StorePrice, Long> {
 	@Query("select avg(p.storePrice) from StorePrice p where p.productId = ?1")
 	public Long findAveragePrice(Long productId);
 
+	@Query("select count(p.storePrice) from StorePrice p where p.productId = ?1")
+	public Long findTotalPriceEntries(Long productId);
+
+	public List<StorePrice> findByProductId(Long productId);
+
 }
