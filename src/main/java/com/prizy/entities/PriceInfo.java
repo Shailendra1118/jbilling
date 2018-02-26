@@ -1,5 +1,10 @@
 package com.prizy.entities;
 
+/**
+ * 
+ * @author Shailendra
+ *
+ */
 import java.io.Serializable;
 import java.util.Date;
 

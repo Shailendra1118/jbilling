@@ -14,6 +14,10 @@ import com.prizy.entities.PriceInfo;
 import com.prizy.entities.repo.intf.IPriceInfoRepository;
 import com.prizy.services.intf.IPriceInfoService;
 
+/**
+ * @author Shailendra
+ *
+ */
 @Service
 public class PriceInfoService implements IPriceInfoService {
 

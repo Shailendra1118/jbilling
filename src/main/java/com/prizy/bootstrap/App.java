@@ -25,6 +25,11 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+/**
+ * 
+ * @author Shailendra
+ *
+ */
 @SpringBootApplication
 @ComponentScan(basePackages = "com.prizy")
 @EnableJpaRepositories("com.prizy.entities.repo.intf")

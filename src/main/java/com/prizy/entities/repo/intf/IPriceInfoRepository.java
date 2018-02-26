@@ -11,6 +11,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.prizy.entities.PriceInfo;
 
+/**
+ * @author Shailendra
+ *
+ */
 public interface IPriceInfoRepository extends JpaRepository<PriceInfo, Long> {
 
 	public List<PriceInfo> findByProductId(Long productId);

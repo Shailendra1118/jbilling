@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.prizy.entities.StorePrice;
 
+/**
+ * @author Shailendra
+ *
+ */
 @Service
 public class IdeaPriceBy20Percent implements IIdealPriceStrategy {
 

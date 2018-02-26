@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.prizy.entities.StorePrice;
 
+/**
+ * @author Shailendra
+ *
+ */
 public interface IPriceStoreRepository extends JpaRepository<StorePrice, Long> {
 
 	public List<StorePrice> findByProductIdAndStoreId(Long pId, Long sId);

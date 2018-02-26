@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.prizy.entities.StorePrice;
 
+/**
+ * @author Shailendra
+ *
+ */
 public interface IPriceStoreService {
 
 	List<StorePrice> getAllPriceStore();

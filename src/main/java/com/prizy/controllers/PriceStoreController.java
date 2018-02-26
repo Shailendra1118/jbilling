@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.prizy.entities.StorePrice;
 import com.prizy.services.intf.IPriceStoreService;
 
+/**
+ * @author Shailendra
+ *
+ */
 @RestController
 public class PriceStoreController {
 

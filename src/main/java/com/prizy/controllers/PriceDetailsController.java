@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.prizy.entities.vo.PriceDetails;
 import com.prizy.services.intf.IPriceDetailsService;
 
+/**
+ * 
+ * @author Shailendra
+ *
+ */
 @RestController
 public class PriceDetailsController {
 

@@ -18,6 +18,10 @@ import com.prizy.services.intf.IPriceInfoService;
 import com.prizy.services.intf.IPriceStoreService;
 import com.prizy.services.intf.IProductService;
 
+/**
+ * @author Shailendra
+ *
+ */
 @Component
 public class PriceCalJobService {
 

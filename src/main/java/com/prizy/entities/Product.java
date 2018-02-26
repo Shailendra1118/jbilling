@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+/**
+ * @author Shailendra
+ *
+ */
 @Entity
 @Table(name = "PRODUCT")
 @SequenceGenerator(name = "prod_seq", initialValue = 500)

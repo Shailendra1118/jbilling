@@ -9,6 +9,10 @@ import com.prizy.entities.Product;
 import com.prizy.entities.repo.intf.IProductRepository;
 import com.prizy.services.intf.IProductService;
 
+/**
+ * @author Shailendra
+ *
+ */
 @Service
 public class ProductService implements IProductService {
 

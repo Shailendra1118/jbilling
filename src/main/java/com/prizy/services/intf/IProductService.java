@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.prizy.entities.Product;
 
+/**
+ * @author Shailendra
+ *
+ */
 public interface IProductService {
 
 	List<Product> getAllProducts();

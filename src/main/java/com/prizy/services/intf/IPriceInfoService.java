@@ -5,6 +5,10 @@ import java.util.List;
 
 import com.prizy.entities.PriceInfo;
 
+/**
+ * @author Shailendra
+ *
+ */
 public interface IPriceInfoService {
 
 	List<PriceInfo> getPriceInfo(Long productId);

@@ -1,5 +1,10 @@
 package com.prizy.entities.vo;
 
+/**
+ * 
+ * @author Shailendra
+ *
+ */
 import java.util.Date;
 
 public class JobDetails {

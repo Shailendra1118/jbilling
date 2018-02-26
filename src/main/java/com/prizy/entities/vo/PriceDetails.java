@@ -1,5 +1,10 @@
 package com.prizy.entities.vo;
 
+/**
+ * 
+ * @author Shailendra
+ *
+ */
 public class PriceDetails {
 
 	private Long productId;

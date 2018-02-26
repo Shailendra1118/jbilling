@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.prizy.entities.Store;
 import com.prizy.services.intf.IStoreService;
 
+/**
+ * @author Shailendra
+ *
+ */
 @RestController
 public class StoreController {
 

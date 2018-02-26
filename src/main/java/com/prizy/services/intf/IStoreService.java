@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.prizy.entities.Store;
 
+/**
+ * @author Shailendra
+ *
+ */
 public interface IStoreService {
 
 	public List<Store> getAllStores();

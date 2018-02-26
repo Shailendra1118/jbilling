@@ -11,6 +11,10 @@ import com.prizy.entities.Store;
 import com.prizy.entities.repo.intf.IStoreRepository;
 import com.prizy.services.intf.IStoreService;
 
+/**
+ * @author Shailendra
+ *
+ */
 @Service
 public class StoreService implements IStoreService {
 
