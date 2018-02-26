@@ -1,5 +1,6 @@
 package com.prizy.entities.repo.intf;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -16,6 +17,7 @@ public interface IPriceInfoRepository extends JpaRepository<PriceInfo, Long> {
 
 	@Transactional
 	@Modifying
-	@Query("update PriceInfo p set p.idealPrice = ?1 where p.productId = ?2")
-	public void updateIdealPrice(Long idealPrice, Long productId);
+	@Query("update PriceInfo p set p.idealPrice = ?1, p.updatedAt = ?2 where p.productId = ?3")
+	public void updateIdealPrice(Long idealPrice, Date updatedDate,
+			Long productId);
 }

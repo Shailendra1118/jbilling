@@ -64,4 +64,8 @@ VALUES(19L, 3, 6, 9600);
 
 --PRICE_INFO table
 INSERT INTO "PRICE_INFO" (id, product_id, ideal_price, currency) 
-VALUES(1L, 1, 5000, 'INR');
+VALUES(1L, 1, 8200, 'INR');
+INSERT INTO "PRICE_INFO" (id, product_id, ideal_price, currency) 
+VALUES(2L, 2, 43000, 'INR');
+INSERT INTO "PRICE_INFO" (id, product_id, ideal_price, currency) 
+VALUES(3L, 3, 9500, 'INR');

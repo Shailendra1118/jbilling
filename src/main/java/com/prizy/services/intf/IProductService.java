@@ -6,10 +6,12 @@ import com.prizy.entities.Product;
 
 public interface IProductService {
 
-	public List<Product> getAllProducts();
+	List<Product> getAllProducts();
 
-	public Product getProductById(Long id);
+	List<Long> getAllProductIds();
 
-	public void create(Product product);
+	Product getProductById(Long id);
+
+	void create(Product product);
 
 }

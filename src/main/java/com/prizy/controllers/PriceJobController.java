@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.prizy.entities.vo.JobDetails;
-import com.prizy.scheduled.tasks.ScheduledPriceTask;
+import com.prizy.services.PriceCalJobService;
 import com.prizy.services.intf.IPriceStoreService;
 
 @RestController
@@ -20,7 +20,7 @@ public class PriceJobController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private ScheduledPriceTask task;
+	private PriceCalJobService jobService;
 
 	@Autowired
 	private IPriceStoreService service;
@@ -30,10 +30,10 @@ public class PriceJobController {
 	public ResponseEntity<JobDetails> runPriceCalculator(
 			@RequestParam(value = "command") String command) {
 		logger.info("runPriceCalculator called...");
-		task.toggle();
 		JobDetails job = new JobDetails();
-		job.setJobName(task.getJobName());
-		job.setStartedAt(task.getStartedAt());
+		job.setJobName(jobService.getJobName());
+		job.setStartedAt(jobService.getStartedAt());
+		jobService.execute();
 		return new ResponseEntity<JobDetails>(HttpStatus.ACCEPTED);
 	}
 

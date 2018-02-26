@@ -30,4 +30,9 @@ public class ProductService implements IProductService {
 		repo.save(product);
 	}
 
+	@Override
+	public List<Long> getAllProductIds() {
+		return repo.findAllProductIds();
+	}
+
 }

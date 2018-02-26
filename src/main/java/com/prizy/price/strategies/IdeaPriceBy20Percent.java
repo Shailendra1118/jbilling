@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.prizy.entities.StorePrice;
 
 @Service
-public class IdeaPriceBy20Percent extends IdealPriceStrategy {
+public class IdeaPriceBy20Percent implements IIdealPriceStrategy {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -19,7 +19,8 @@ public class IdeaPriceBy20Percent extends IdealPriceStrategy {
 	 * removing the 2 highest and 2 lowest, then doing an average with the rest
 	 * and adding 20% to it.
 	 */
-	public void calculate(List<StorePrice> prices) {
+	@Override
+	public Long calculate(List<StorePrice> prices) {
 
 		// 1. remove 2 highest and lowest prices
 		List<Long> ideals = prices.stream().map(StorePrice::getStorePrice)
@@ -49,8 +50,9 @@ public class IdeaPriceBy20Percent extends IdealPriceStrategy {
 		// 3.calculate 20% and add
 		Double twentyPer = 20 * avg / 100;
 		final Double ideal = avg + twentyPer;
-		idealPrice = ideal.longValue();
 		logger.info("Ideal price is :" + ideal);
+		return ideal.longValue();
+
 	}
 
 }

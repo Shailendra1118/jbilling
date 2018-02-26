@@ -1,8 +1,10 @@
 package com.prizy.price.strategies;
 
+import java.util.List;
+
+import com.prizy.entities.StorePrice;
+
 public interface IIdealPriceStrategy {
 
-	public void execute();
-
-	public void setProductId(Long pid);
+	public Long calculate(List<StorePrice> prices);
 }
