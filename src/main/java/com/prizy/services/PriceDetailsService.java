@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.prizy.entities.PriceInfo;
 import com.prizy.entities.Product;
+import com.prizy.entities.builders.PriceDetailsBuilder;
 import com.prizy.entities.vo.PriceDetails;
 import com.prizy.services.exceptions.IdealPriceNotFoundException;
 import com.prizy.services.intf.IPriceDetailsService;
@@ -36,18 +37,26 @@ public class PriceDetailsService implements IPriceDetailsService {
 		if (idealPrice.isEmpty()) {
 			throw new IdealPriceNotFoundException("product: " + pid);
 		}
-		PriceDetails details = new PriceDetails();
-		details.setProductId(pid);
-		Product prod = productService.getProductById(pid);
-		details.setProductName(prod.getName());
-		details.setDesc(prod.getLongDescription());
-		details.setBasePrice(prod.getBasePrice());
-		details.setLowestPrice(priceStoreService.getLowestPrice(pid));
-		details.setHighestPrice(priceStoreService.getHighestPrice(pid));
-		details.setAveragePrice(priceStoreService.getAveragePrice(pid));
-		details.setCountOfDiffPrices(priceStoreService
-				.getTotalPriceEntries(pid));
-		details.setIdealPrice(idealPrice.iterator().next().getIdealPrice());
+
+		PriceDetails details = new PriceDetailsBuilder().with(
+				builder -> {
+					builder.setProductId(pid);
+					Product prod = productService.getProductById(pid);
+					builder.setDesc(prod.getLongDescription());
+					builder.setProductName(prod.getName());
+					builder.setBasePrice(prod.getBasePrice());
+					builder.setAveragePrice(priceStoreService
+							.getAveragePrice(pid));
+					builder.setLowestPrice(priceStoreService
+							.getLowestPrice(pid));
+					builder.setHighestPrice(priceStoreService
+							.getHighestPrice(pid));
+					builder.setIdealPrice(idealPrice.iterator().next()
+							.getIdealPrice());
+					builder.setCountOfDiffPrices(priceStoreService
+							.getTotalPriceEntries(pid));
+
+				}).createProduct();
 
 		return details;
 	}

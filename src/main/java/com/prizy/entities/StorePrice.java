@@ -62,6 +62,10 @@ public class StorePrice implements Serializable {
 		// default emtpy constructor
 	}
 
+	public String toString() {
+		return "ProductId: " + this.productId + ", StoreId: " + this.storeId;
+	}
+
 	/**
 	 * @return the id
 	 */

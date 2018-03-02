@@ -9,6 +9,7 @@ import java.util.Date;
 
 public class JobDetails {
 	private String jobName;
+	private String message;
 	private Date startedAt;
 
 	/**
@@ -39,5 +40,20 @@ public class JobDetails {
 	 */
 	public void setStartedAt(Date startedAt) {
 		this.startedAt = startedAt;
+	}
+
+	/**
+	 * @return the message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+	/**
+	 * @param message
+	 *            the message to set
+	 */
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }

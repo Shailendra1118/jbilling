@@ -1,4 +1,4 @@
-package com.prizy.controllers;
+package com.prizy.rest.controllers;
 
 import java.util.List;
 import java.util.Objects;
@@ -42,10 +42,20 @@ public class PriceStoreController {
 
 	@RequestMapping(value = "/store/product", method = RequestMethod.POST)
 	public ResponseEntity<StorePrice> createStorePrice(
-			@RequestBody StorePrice product) {
-		logger.info("createStorePrice : {}", product);
-		service.create(product);
-		return new ResponseEntity<StorePrice>(product, HttpStatus.CREATED);
+			@RequestBody StorePrice storePrice) {
+		logger.info("createStorePrice : {}", storePrice);
+		List<StorePrice> existing = service.getProductPrice(
+				storePrice.getProductId(), storePrice.getStoreId());
+		if (!existing.isEmpty()) {
+			StorePrice price = existing.iterator().next();
+			logger.error(
+					"Unable to create. A StorePrice of this product {} in store {} already exist",
+					price.getProductId(), price.getStoreId());
+			return new ResponseEntity<StorePrice>(HttpStatus.CONFLICT);
+		}
+
+		service.create(storePrice);
+		return new ResponseEntity<StorePrice>(storePrice, HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/storeprice", method = RequestMethod.GET)

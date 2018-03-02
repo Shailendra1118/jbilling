@@ -27,4 +27,5 @@ public interface IPriceStoreService {
 	void create(StorePrice priceStore);
 
 	List<StorePrice> getProductPrices(Long productId);
+
 }

@@ -39,4 +39,12 @@ public class ProductService implements IProductService {
 		return repo.findAllProductIds();
 	}
 
+	@Override
+	public boolean isExists(String name) {
+		if (repo.findByName(name) == null)
+			return false;
+		else
+			return true;
+	}
+
 }

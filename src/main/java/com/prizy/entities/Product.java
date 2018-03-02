@@ -49,6 +49,22 @@ public class Product implements Serializable {
 	}
 
 	/**
+	 * @param name
+	 * @param longDescription
+	 * @param basePrice
+	 */
+	public Product(Long id, String name, String longDescription,
+			Long basePrice, String type, Float rating, String imgUrl) {
+		this.id = id;
+		this.name = name;
+		this.longDescription = longDescription;
+		this.basePrice = basePrice;
+		this.type = type;
+		this.rating = rating;
+		this.imgUrl = imgUrl;
+	}
+
+	/**
 	 * @return the id
 	 */
 	public Long getId() {

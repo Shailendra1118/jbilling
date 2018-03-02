@@ -16,4 +16,11 @@ public interface IProductRepository extends JpaRepository<Product, Long> {
 	@Query("select distinct(p.id) from Product p")
 	List<Long> findAllProductIds();
 
+	/**
+	 * Find products with give name
+	 * 
+	 * @param name
+	 */
+	Product findByName(String name);
+
 }

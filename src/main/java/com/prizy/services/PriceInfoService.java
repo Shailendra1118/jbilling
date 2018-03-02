@@ -27,7 +27,7 @@ public class PriceInfoService implements IPriceInfoService {
 	private IPriceInfoRepository repo;
 
 	@Override
-	@Cacheable("priceinfos")
+	@Cacheable(value = "priceinfos", key = "#productId")
 	public List<PriceInfo> getPriceInfo(Long productId) {
 		logger.info("getPriceInfo called...");
 		return repo.findByProductId(productId);

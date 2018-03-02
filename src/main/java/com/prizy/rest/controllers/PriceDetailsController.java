@@ -1,4 +1,4 @@
-package com.prizy.controllers;
+package com.prizy.rest.controllers;
 
 import java.util.Objects;
 

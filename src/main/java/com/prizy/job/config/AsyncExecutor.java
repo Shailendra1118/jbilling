@@ -1,7 +1,5 @@
 package com.prizy.job.config;
 
-import java.util.concurrent.Executor;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
@@ -19,9 +17,9 @@ public class AsyncExecutor extends AsyncConfigurerSupport {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
-	public Executor getAsyncExecutor() {
+	public ThreadPoolTaskExecutor getAsyncExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(2);
+		executor.setCorePoolSize(1);
 		executor.setMaxPoolSize(2);
 		executor.setQueueCapacity(500);
 		executor.setThreadNamePrefix("PrizyCalculator-");

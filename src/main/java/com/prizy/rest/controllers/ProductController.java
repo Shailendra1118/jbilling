@@ -1,4 +1,4 @@
-package com.prizy.controllers;
+package com.prizy.rest.controllers;
 
 /**
  * @author Shailendra
@@ -51,7 +51,13 @@ public class ProductController {
 
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
 	public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-		logger.info("createProduct : {}", product);
+		logger.info("creating product : {}", product);
+		if (productService.isExists(product.getName())) {
+			logger.error(
+					"Unable to create. A Product with name {} already exist",
+					product.getName());
+			return new ResponseEntity<Product>(HttpStatus.CONFLICT);
+		}
 		productService.create(product);
 		return new ResponseEntity<Product>(product, HttpStatus.CREATED);
 	}
