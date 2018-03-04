@@ -30,7 +30,6 @@ $ java -jar jbilling-0.1.0.jar
 ### Todos
 
  - Write MORE Tests
- - Add Night Mode
 
 
 
