@@ -26,7 +26,7 @@ public class ProductService implements IProductService {
 
 	@Override
 	public Product getProductById(Long id) {
-		return repo.getOne(id);
+		return repo.findOne(id); // getOne(id); returns a reference with give id
 	}
 
 	@Override

@@ -60,6 +60,17 @@ public class PriceInfo implements Serializable {
 	}
 
 	/**
+	 * @param id2
+	 * @param productId2
+	 * @param idealPrice2
+	 */
+	public PriceInfo(Long id2, Long productId2, Long idealPrice2) {
+		this.id = id2;
+		this.productId = productId2;
+		this.idealPrice = idealPrice2;
+	}
+
+	/**
 	 * @return the id
 	 */
 	public Long getId() {

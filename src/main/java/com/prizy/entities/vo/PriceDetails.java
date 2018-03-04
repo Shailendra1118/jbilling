@@ -177,4 +177,27 @@ public class PriceDetails {
 	public void setCountOfDiffPrices(Long countOfDiffPrices) {
 		this.countOfDiffPrices = countOfDiffPrices;
 	}
+
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = result * prime + this.productId.hashCode();
+		result = result * prime + this.productName.hashCode();
+		result = result * prime + this.basePrice.hashCode();
+		return 0;
+
+	}
+
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (!(o instanceof PriceDetails)) {
+			return false;
+		}
+
+		PriceDetails other = (PriceDetails) o;
+		return other.productId.equals(this.productId)
+				&& other.productName.equals(this.productName)
+				&& other.basePrice.equals(this.basePrice);
+	}
 }

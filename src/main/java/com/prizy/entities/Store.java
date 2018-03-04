@@ -39,6 +39,19 @@ public class Store implements Serializable {
 	}
 
 	/**
+	 * @param id2
+	 * @param name2
+	 * @param desc
+	 * @param location2
+	 */
+	public Store(Long id2, String name2, String desc, String location2) {
+		this.id = id2;
+		this.name = name2;
+		this.description = desc;
+		this.location = location2;
+	}
+
+	/**
 	 * @return the id
 	 */
 	public Long getId() {
